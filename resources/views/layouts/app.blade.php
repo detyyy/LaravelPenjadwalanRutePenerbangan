@@ -36,6 +36,11 @@
 					sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
 				} else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 			};
+
+      function showDetails(hari, waktu, rute) {
+         let tanggal = event.target.getAttribute('data-tanggal');
+         alert(`Hari: ${hari}\nTanggal: ${tanggal}\nWaktu: ${waktu}\nRute: ${rute}`);
+      }
   </script>
 </body>
 

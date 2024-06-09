@@ -14,4 +14,11 @@ class flight extends Model
     protected $fillable = ['nama', 'asal', 'tujuan', 'gambar'];
     public $timestamps = false;
 
+    public function schedule()
+    {
+        return $this->hasMany(Schedule::class, 'schedule_id', 'id_schedule');
+    }
+
 }
+
+

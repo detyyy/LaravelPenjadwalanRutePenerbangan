@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\fligtController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\WelcomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,4 +26,10 @@ Route::get('/flight/edit/{id}', [fligtController::class, 'edit']);
 Route::put('/flight/update/{id}', [fligtController::class, 'update']);
 Route::get('/flight/hapus/{id}', [fligtController::class, 'delete']);
 Route::get('/flight/destroy/{id}', [fligtController::class, 'destroy']);
+
+Route::post('/Order', [WelcomeController::class, 'CreateSchedule'])->name('schedule');
+Route::get('/schedule', [ScheduleController::class, 'index']);
+Route::get('/', [WelcomeController::class, 'index']);
+
+Route::get('/schedule/cetak', [ScheduleController::class, 'cetak']);
 
